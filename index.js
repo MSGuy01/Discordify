@@ -1,11 +1,21 @@
 $("#clear").on('click', () => {
     window.location.reload();
 });
+function clear(textt) {
+    let final = '';
+    for (let i = 0; i < textt.length; i++) {
+        if (textt[i] != '&') {
+            final += textt[i];
+        }
+    }
+    return final;
+}
+//TODO:FIX FIRST SECTION?
 $('#submit').on('click', () => {
-    let copyText = document.getElementById("text");
-    document.getElementById("len").innerHTML = Math.floor(copyText.value.length/2000) + 1;
-    for (let i = 0; i < Math.floor(copyText.value.length/2000) + 1; i++) {
-        let h = copyText.value.substr(i*2000,2000);
+    let copyText = clear(document.getElementById("text").value);
+    document.getElementById("len").innerHTML = Math.floor(copyText.length/2000) + 1;
+    for (let i = 0; i < Math.floor(copyText.length/2000) + 1; i++) {
+        let h = copyText.substr(i*2000,2000);
         let neww = document.createElement("div");
         let newButton = document.createElement("button");
         newButton.id = i;
