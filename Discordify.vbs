@@ -16,4 +16,4 @@ WshShell.SendKeys "{TAB}"
 WshShell.SendKeys "{ENTER}"
 WScript.Sleep 500
 i = i + 1
-loop while i < 57
+loop while i < 200
